@@ -1,14 +1,21 @@
 const sentence = "hello there from lighthouse labs";
 
-for (const char of sentence) {
-  delay(char)
-};
+const finalString = () => {
+  let count = 0;
+  for (const char of sentence) {
+    setTimeout(() => {
+      process.stdout.write(char)
+    }, count * 50)
+    count++;
+  };
 
-function delay(char) {
   setTimeout(() => {
-    process.stdout.write(char)
-  }, 50)
+    process.stdout.write('\n');
+  }, sentence.length * 50)
 }
 
-console.log(delay())
+
+finalString()
+
+
 
